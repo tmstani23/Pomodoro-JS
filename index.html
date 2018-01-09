@@ -12,9 +12,19 @@
     </head>
     
     <body>
-        <div class = "column" id="column1">
-                <button type="button" class="btn btn-primary" onclick="divideNum()">/</button> 
-        </div>    
+        <h1>Pomodoro-JS</h1>
+        <div>Time:
+            <p id="mainTimeP"></p>
+        </div> 
+        <div class="button" id="restartButton">
+                <button type="button" class="btn btn-primary" onclick="restartTimer()">Reset Timer</button> 
+        </div> 
+        <div class="button" id="startButton">
+                <button type="button" class="btn btn-primary" onclick="startTimer()">Start Timer</button> 
+        </div> 
+        <div class="button" id="stopButton">
+                <button type="button" class="btn btn-primary" onclick="stopTimer()">Stop Timer</button> 
+        </div>       
     </body>
 
 </html>
