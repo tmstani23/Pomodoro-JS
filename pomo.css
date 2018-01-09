@@ -6,3 +6,15 @@
     background-color: rgb(110, 20, 255);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#mainTimeP {
+    font-size: 45px;
+    color: purple;
+}
+h1 {
+    font-size: 120px;
+    color: black;
+    text-align: center;
+}
+div {
+    text-align: center;
+}
