@@ -1,24 +1,47 @@
 //Create a timer that displays seconds counting down from 60 and stopping at 0
 let inputHour = 0;
-let inputMin = 4;
-let inputSec = 10;
-let secTimer;
+let inputMin = 1;
+let inputSec = 5;
+let secTimer = 0;
 let setHour = inputHour;
 let setMin = inputMin;
 let setSec = inputSec;
 
-let paused = true;
+//let paused = false;
 //var secTimer = setInterval(function(){ calcTime() }, 1000);
 
 //Timer that calls displayTime function every seconds;
 function startTimer() {
-    secTimer = setInterval(calcTime, 1000);
+    // if(secTimer == true) {
+    //     console.log("istrue");
+    //     stopTimer();
+    //     return;
+    // }
+    console.log(secTimer);
+    if (secTimer >= 1) {
+        //stopTimer();
+        return;
+    }
+    // if (secTimer > 1){
+    //     stopTimer();
+    //     return;
+    // }
+    // if (secTimer >=2) {
+    //     return;
+    // }
+    if (setHour == 0 && setMin == 0 && setSec == 0) {
+        
+        restartTimer();
+        
+    }
+    console.log(secTimer);
+    secTimer = window.setInterval('calcTime()', 1000);
 }
 
 function calcTime() {
     let result = "";
     if (setHour == 0 && setSec == 0 && setMin == 0) {
-        return endTimer();
+        stopTimer();
     }
     else if (setHour > 0 && setMin == 0 && setSec == 0) {
         setHour = setHour - 1;
@@ -48,24 +71,23 @@ function restartTimer() {
     setHour = inputHour;
     setMin = inputMin;
     setSec = inputSec;
+    
     let result = setHour + " " + setMin + " " + setSec;
     displayTime(result);
     //endTimer();
 }
 function stopTimer() {
     
-    endTimer();
-    
-    
+    clearInterval(secTimer);
+    secTimer = 0;
+    //secTimer = false;
 }
 function displayTime(time){
     document.getElementById("mainTimeP").innerHTML = time;
 }
 
-function endTimer() {
-    paused = false;
-    clearInterval(startTimer); 
-}
+        
+
 
 //Start timer:
 //startTimer();
