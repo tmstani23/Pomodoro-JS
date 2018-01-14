@@ -13,18 +13,33 @@
     
     <body>
         <h1>Pomodoro-JS</h1>
+        <div>
+            <p id="statusP"></p>
+        </div> 
         <div>Time:
             <p id="mainTimeP"></p>
         </div> 
         <div class="button" id="restartButton">
-                <button type="button" class="btn btn-primary" onclick="restartTimer()">Reset Timer</button> 
+                <button type="button" class="btn btn-primary" onclick="setTInputs()">Reset Timer</button> 
         </div> 
         <div class="button" id="startButton">
                 <button type="button" class="btn btn-primary" onclick="startTimer()">Start Timer</button> 
         </div> 
         <div class="button" id="stopButton">
-                <button type="button" class="btn btn-primary" onclick="stopTimer()">Stop Timer</button> 
-        </div>       
+                <button type="button" class="btn btn-primary" onclick="stopTimer()">Pause Timer</button> 
+        </div>
+        <div id="timeInputsDiv">Input Time Here:
+            <input type="number" id="hrInput" value="0">
+            <input type="number" id="minInput" value="25">
+            <input type="number" id="secInput" value="0">
+            <button onclick="setTInputs(breakOn = false)">Submit Inputs</button>
+        </div> 
+        <div id="timeInputsDiv">Input Break Time Here:
+            <input type="number" id="bhrInput" value="0">
+            <input type="number" id="bminInput" value="5">
+            <input type="number" id="bsecInput" value="0">
+            <button onclick="setTInputs()">Submit Inputs</button>
+        </div>      
     </body>
 
 </html>
