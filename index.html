@@ -20,7 +20,7 @@
             <p id="mainTimeP"></p>
         </div> 
         <div class="button" id="restartButton">
-                <button type="button" class="btn btn-primary" onclick="setTInputs()">Reset Timer</button> 
+                <button type="button" class="btn btn-primary" onclick="setTInputs(breakOn = false)">Reset Timer</button> 
         </div> 
         <div class="button" id="startButton">
                 <button type="button" class="btn btn-primary" onclick="startTimer()">Start Timer</button> 
@@ -30,15 +30,15 @@
         </div>
         <div id="timeInputsDiv">Input Time Here:
             <input type="number" id="hrInput" value="0">
-            <input type="number" id="minInput" value="25">
-            <input type="number" id="secInput" value="0">
-            <button onclick="setTInputs(breakOn = false)">Submit Inputs</button>
+            <input type="number" id="minInput" value="0">
+            <input type="number" id="secInput" value="3">
+            <button class="btn btn-primary" onclick="setTInputs(breakOn = false)">Submit Inputs</button>
         </div> 
         <div id="timeInputsDiv">Input Break Time Here:
             <input type="number" id="bhrInput" value="0">
-            <input type="number" id="bminInput" value="5">
-            <input type="number" id="bsecInput" value="0">
-            <button onclick="setTInputs()">Submit Inputs</button>
+            <input type="number" id="bminInput" value="0">
+            <input type="number" id="bsecInput" value="3">
+            <button class="btn btn-primary" onclick="setTInputs()">Submit Inputs</button>
         </div>      
     </body>
 
