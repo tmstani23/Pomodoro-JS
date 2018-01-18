@@ -6,12 +6,10 @@ let breakDisplay = document.getElementById("statusDiv");
 let setHour;
 let setMin;
 let setSec;
-let inpurArr = [document.getElementById("hrInput").value, 
-document.getElementById("bhrInput").value, 
-document.getElementById("minInput").value, 
-document.getElementById("bminInput").value, 
-document.getElementById("secInput").value,
-document.getElementById("bsecInput")];
+let inputArr;
+
+
+
 //let result;
 const gongA = new Audio('sounds/cgong.mp3');
 
@@ -21,9 +19,7 @@ const gongA = new Audio('sounds/cgong.mp3');
 //function that takes user inputs and saves them to global variables
 function setTInputs() {
     //get number input and save to globals
-    // inputHour = document.getElementById("hrInput").value;
-    // inputMin = document.getElementById("minInput").value;
-    // inputSec = document.getElementById("secInput").value;
+    // 
     // setHour = inputHour;
     // setMin = inputMin;
     // setSec = inputSec;
@@ -56,54 +52,42 @@ function setTInputs() {
     }
    
     
-    console.log(setHour);
+    //console.log(setHour);
     //console.log(setHour, setMin, setSec);
     //display time to screen:
     //result = inputHour + `:`+ inputMin + `:` + inputSec;
     result = setHour + `:`+ setMin + `:` + setSec;
+    
     displayTime(result);    
 }
 
 function intoZero() {
-    // if (document.getElementById("hrInput").value == "") {
-    //     //console.log("true");
-    //     //console.log(document.getElementById("hrInput").value)
-    //     document.getElementById("hrInput").value = 0;
+    if (document.getElementById("hrInput").value == "") {
         
-    //     //document.getElementById("bhrInput").value = 0;
-    // }
-    // if (document.getElementById("bhrInput").value == ""){
-    //     document.getElementById("bhrInput").value = 0;
-    // }
-    // if (document.getElementById("minInput").value == "") {
-    //     //console.log("true");
-    //     //console.log(document.getElementById("hrInput").value)
-    //     document.getElementById("minInput").value = 0;
+        document.getElementById("hrInput").value = 0;
         
-    //     //document.getElementById("bhrInput").value = 0;
-    // }
-    // if (document.getElementById("bminInput").value == ""){
-    //     document.getElementById("bminInput").value = 0;
-    // }
-    // if (document.getElementById("secInput").value == "") {
-    //     //console.log("true");
-    //     //console.log(document.getElementById("hrInput").value)
-    //     document.getElementById("secInput").value = 0;
+    }
+    if (document.getElementById("bhrInput").value == ""){
+        document.getElementById("bhrInput").value = 0;
+    }
+    if (document.getElementById("minInput").value == "") {
         
-    //     //document.getElementById("bhrInput").value = 0;
-    // }
-    // if (document.getElementById("bsecInput").value == ""){
-    //     document.getElementById("bsecInput").value = 0;
-    // }
-    inpurArr.forEach(function (value) {
-        console.log(value);
-        if(value == ""){
-            
-            return value = 0;
-        }
-    });
+        document.getElementById("minInput").value = 0;
+        
+    }
+    if (document.getElementById("bminInput").value == ""){
+        document.getElementById("bminInput").value = 0;
+    }
+    if (document.getElementById("secInput").value == "") {
+        
+        document.getElementById("secInput").value = 0;
+        
+    }
+    if (document.getElementById("bsecInput").value == ""){
+        document.getElementById("bsecInput").value = 0;
+    }
+    
 }
-
 //Timer that calls displayTime function every seconds;
 function startTimer() {
     if(setMin == undefined) {
@@ -125,6 +109,8 @@ function calcTime() {
     if (setHour == 0 && setSec == 0 && setMin == 0) {
         if (breakOn == true) {
             stopTimer();
+            gongA.pause();
+            gongA.currentTime = 0;
             setTInputs(breakOn = false);
             gongA.play();
         }
@@ -132,6 +118,7 @@ function calcTime() {
             stopTimer();
             setTInputs(breakOn = true)
             gongA.pause();
+            gongA.currentTime = 0;
             gongA.play();
         }
     }
@@ -151,7 +138,7 @@ function calcTime() {
     
     result = setHour + `:`+ setMin + `:` + setSec;
     
-    console.log(setHour);
+    //console.log(setHour);
     return displayTime(result);
     
 }
