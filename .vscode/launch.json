@@ -8,7 +8,7 @@
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
-            "url": "file:///C:/Tim's%20files/2018/Programming%202018/Pomodoro-JS/index.html",
+            "url": "file:///C:/Users/a83h8zz/Programming2017/Pomodoro-JS/index.html",
             "webRoot": "${workspaceFolder}"
         }
     ]
