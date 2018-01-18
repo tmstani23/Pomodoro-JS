@@ -3,6 +3,8 @@
         <meta charset="UTF-8">
         <!--Bootstrap link:-->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Sedgwick+Ave+Display" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet"> 
         <script language="javascript" type="text/javascript" src="libraries/p5.js"></script>
         <!-- uncomment lines below to include extra p5 libraries -->
         <script language="javascript" src="libraries/p5.dom.js"></script>
@@ -15,31 +17,27 @@
         
         <h1>Pomodoro-JS</h1>
         <div id="containerDiv">
-            
-            
-            <div id="statusP"> 
-
-            </div>
+            <div id="statusP"> </div>
             <div class="buttonDiv">
                     <button id="resetButton" type="button" class="btn btn-primary" onclick="setTInputs(breakOn = false)">Reset Timer</button>
                     <button id="startButton" type="button" class="btn btn-primary" onclick="startTimer()">Start Timer</button>
                     <button id="stopButton" type="button" class="btn btn-primary" onclick="stopTimer()">Pause Timer</button> 
             </div>
-            <div>Time:
+            <div>
                     <p id="mainTimeP"></p>
             </div> 
             <div id="timeInputsDiv1">
-                <h2>Timer Duration:</h2>
-                <input type="number" id="hrInput" value="0">
-                <input type="number" id="minInput" value="25">
-                <input type="number" id="secInput" value="0">
+                <h2>Pomodoro Timer</h2>
+                Hours: <input type="number" id="hrInput" value="0">  
+                Minutes: <input type="number" id="minInput" value="25">  
+                Seconds: <input type="number" id="secInput" value="0">  
                 <button class="btn btn-primary" onclick="setTInputs(breakOn = false)">Submit</button>
             </div> 
             <div id="timeInputsDiv2">
-                <h2>Break Timer Duration:</h2>
-                <input type="number" id="bhrInput" value="0">
-                <input type="number" id="bminInput" value="5">
-                <input type="number" id="bsecInput" value="0">
+                <h2>Break Timer</h2>
+                Hours: <input type="number" id="bhrInput" value="0">
+                Minutes: <input type="number" id="bminInput" value="5">
+                Seconds: <input type="number" id="bsecInput" value="0">
                 <button id="submit1" class="btn btn-primary" onclick="setTInputs()">Submit</button>
             </div>
         </div>      
