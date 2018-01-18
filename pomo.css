@@ -1,20 +1,70 @@
+#containerDiv {
+    margin: 0 auto;
+    
+    background-image: url("hexaback.png");
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    border-radius: 25px;
+}
+#timeInputsDiv1 {
+    border-color: grey; 
+    border: solid;   
+}
+.buttonDiv {
+    display:flex;
+    margin: 5 auto;
+    flex-direction: row;
+    align-content: center;
+    
+}
+
 .btn-primary {
-    width: 30%;
-    margin: 2px;
-    font-size: 15px;
+    width: 85px;
+    margin: 10px !important;
+    padding: 2px;
+    margin: auto;
+    font-size: 12px;
     border-radius: 5px;
     background-color: rgb(110, 20, 255);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
 #mainTimeP {
     font-size: 45px;
-    color: purple;
+    display: block;
+    color: white;
+    background-color: grey;
+    width: 200px;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+    margin: 0 auto;
+    margin-bottom: 10%;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 h1 {
+    margin: 10%;
     font-size: 120px;
     color: black;
     text-align: center;
+    
 }
 div {
     text-align: center;
+    
+}
+input {
+    border-radius: 5px;
+    width: 60px;
+    text-align: center;
+    color: white;
+    background-color: rgb(110, 20, 255);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
