@@ -1,70 +1,92 @@
 #containerDiv {
     margin: 0 auto;
-    
+    margin-bottom: 20%;
     background-image: url("hexaback.png");
     display: flex;
+    color: white;
+    font-family: 'Open Sans Condensed', sans-serif;
     justify-content: center;
     align-content: center;
     flex-direction: column;
-    width: 400px;
-    height: 400px;
+    width: 800px;
+    height: 800px;
     padding: 10px;
     border-radius: 25px;
 }
-#timeInputsDiv1 {
-    border-color: grey; 
-    border: solid;   
+#statusP {
+    font-size: 72px;
+    color: white;
 }
 .buttonDiv {
     display:flex;
     margin: 5 auto;
+    align-content: center;
+    text-align: center;
     flex-direction: row;
     align-content: center;
-    
 }
-
 .btn-primary {
-    width: 85px;
+    width: 100px;
+    height: 30px;
+    line-height: 10px !important;
+    vertical-align: middle !important;
     margin: 10px !important;
     padding: 2px;
     margin: auto;
-    font-size: 12px;
+    font-size: 22px;
     border-radius: 5px;
-    background-color: rgb(110, 20, 255);
+    background-color: #806ef7;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
 #mainTimeP {
     font-size: 45px;
     display: block;
-    color: white;
-    background-color: grey;
+    background-color: white;
+    color: black;
     width: 200px;
     height: 50px;
     line-height: 50px;
     vertical-align: middle;
     margin: 0 auto;
-    margin-bottom: 10%;
     text-align: center;
     border-radius: 5px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+#timeInputsDiv1 h2 {
+    font-size: 52px;
+}
 h1 {
-    margin: 10%;
+    font-family: 'Sedgwick Ave', cursive;
     font-size: 120px;
     color: black;
     text-align: center;
     
+}
+h2 {
+    font-family: 'Sedgwick Ave', cursive;
+    font-size: 45px;
+    color: white;
+    
+}
+.buttonDiv button {
+    height: 40px;
+    width: 120px;
+    border-radius: 30px;
 }
 div {
     text-align: center;
     
 }
 input {
-    border-radius: 5px;
-    width: 60px;
+    border-radius: 35px;
+    width: 40px;
+    margin: 5px;
     text-align: center;
-    color: white;
-    background-color: rgb(110, 20, 255);
+    background-color: #806ef7;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
 }
