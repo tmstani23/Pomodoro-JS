@@ -28,5 +28,5 @@ Entering blanks will be automatically reset to 0.
 
 
 # Screenshots:
-![Alt text](https://github.com/tmstani23/JS-Calculator/blob/Master/calc1.jpg)
-![Alt text](https://github.com/tmstani23/JS-Calculator/blob/Master/calc2.jpg)
+![Alt text](https://github.com/tmstani23/Pomodoro-JS/blob/Development/screen1.jpg)
+![Alt text](https://github.com/tmstani23/Pomodoro-JS/blob/Development/screen2.jpg)
