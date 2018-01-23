@@ -14,8 +14,10 @@
     border-radius: 25px;
 }
 #statusP {
-    font-size: 72px;
-    color: white;
+    font-size: 48px;
+    width: 350px;
+    margin: 0 auto;
+    color: rgb(180, 0, 0);
 }
 .buttonDiv {
     display:flex;
