@@ -5,6 +5,7 @@ let breakOn;
 let setHour;
 let setMin;
 let setSec;
+let errorM;
 
 //Initialize audio file for timer end
 const gongA = new Audio('sounds/cgong.mp3');
@@ -13,7 +14,7 @@ const gongA = new Audio('sounds/cgong.mp3');
 //function that takes user inputs and saves them to global variables
 function setTInputs() {
     //intoZero resets user inputs to 0 if they were left blank:
-    intoZero();
+    validateInput();
     
     //Break on determines if the timer is on break or normal timer status
     if (breakOn == true) {
@@ -42,27 +43,59 @@ function setTInputs() {
     displayTime(result);    
 }
 //Function that sets user input fields to 0 if they were left blank or deleted:
-function intoZero() {
-    //if element input value is blank set value to 0:
-    if (document.getElementById("hrInput").value == "") {
-        document.getElementById("hrInput").value = 0;
+function validateInput() {
+    
+    //Save a query to the divs holding all inputs:
+    everyChild = document.querySelectorAll("#timeInputsDiv > input");
+    //Loop through all inputs:
+    for (var i = 0; i<everyChild.length; i++) {
+        //console.log(everyChild[i].value);
+        //Display an error if input isn't a whole number:
+        if(everyChild[i].value % 1 != 0) {
+            console.log(everyChild[i].value);
+            errorM = "Must input whole numbers.";
+            displayError(errorM);
+            throw errorM;
+        }
+        //Set input to 0 if left empty:
+        if (everyChild[i].value == "") {
+            everyChild[i].value = 0;
+        }
+        //Display error if input is less than 0:
+        if (everyChild[i].value < 0) {
+            errorM = "Must input numbers above 0.";
+            displayError(errorM);
+            throw errorM;
+        }
     }
-    if (document.getElementById("bhrInput").value == ""){
-        document.getElementById("bhrInput").value = 0;
+   
+    //Display an error if hour input is more than 24
+    if (document.getElementById("hrInput").value > 24 || document.getElementById("bhrInput").value > 24) {
+        errorM = "Hours must be less than 13.";
+        displayError(errorM);
+        throw errorM;
     }
-    if (document.getElementById("minInput").value == "") {
-        document.getElementById("minInput").value = 0;
+    //Display an error if min input is more than 60:
+    else if (document.getElementById("minInput").value > 60 || document.getElementById("bminInput").value > 60) {
+        errorM = "Minutes must be less than 61.";
+        displayError(errorM);
+        throw errorM;
     }
-    if (document.getElementById("bminInput").value == ""){
-        document.getElementById("bminInput").value = 0;
+    //Display an error if sec input is more than 60:
+    else if (document.getElementById("secInput").value > 60 || document.getElementById("bsecInput").value > 60) {
+        errorM = "Seconds must be less than 61.";
+        displayError(errorM);
+        throw errorM;
     }
-    if (document.getElementById("secInput").value == "") {
-        document.getElementById("secInput").value = 0;
-    }
-    if (document.getElementById("bsecInput").value == ""){
-        document.getElementById("bsecInput").value = 0;
-    }
+    
 }
+
+//Function that displays an error onto the screen:
+function displayError(e) {
+    //Display an error in the status paragraph section:
+    document.getElementById("statusP").innerHTML = e;
+}
+
 //Main timer function that creates an interval timer:
 function startTimer() {
     //If setMin timer input is undefined call set inputs function to grab user inputs:
@@ -77,10 +110,13 @@ function startTimer() {
     //Set a timer that calls calcTime function every second:
     secTimer = window.setInterval('calcTime()', 1000);
 }
+
 //Function that calculates time, updates time variables and plays sounds:
 function calcTime() {
     //initialize result variable to empty:
     let result = "";
+    
+    
     //If all the time variables reach zero:
     if (setHour == 0 && setSec == 0 && setMin == 0) {
         //If break mode is on:
@@ -99,7 +135,7 @@ function calcTime() {
         else {
             //End the timer:
             stopTimer();
-            //Update time variables - call function
+            //Update time variables - turn break mode on
             setTInputs(breakOn = true)
             //End gong sound in case it was still playing
             gongA.pause();
