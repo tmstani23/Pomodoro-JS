@@ -21,11 +21,11 @@
 }
 .buttonDiv {
     display:flex;
-    margin: 5 auto;
-    align-content: center;
+    margin: 0 auto;
     text-align: center;
     flex-direction: row;
     align-content: center;
+    justify-content: center;
 }
 .btn-primary {
     width: 100px;
